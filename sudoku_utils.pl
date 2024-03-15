@@ -1,5 +1,5 @@
 %% * --------------------------------------------------------
-%% * Sudoku Solver (sudoku_features.pl)
+%% * Sudoku Solver (sudoku_utils.pl)
 %% *
 %% * Description : Prolog program for solving a Sudoku grid using Constraint Logic Programming over Finite Domains (CLPFD) 
 %% * Author: Thomas Chimbault
