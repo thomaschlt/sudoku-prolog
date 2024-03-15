@@ -4,9 +4,9 @@ For this program, i used prolog the Constraint Logic Programming over Finite Dom
 
 
 ## Run 
-
 To run the .pl file on SWI-prolog compiler, go to it then run the following command
 
 ```bash
+  swipl -l sudoku_solver.pl
   ?- solver('sudoku-puzzle-input/name_sudoku.txt', 'sudoku-puzzle-output/name_sudoku.txt').
 ``````
