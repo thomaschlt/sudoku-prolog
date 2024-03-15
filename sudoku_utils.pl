@@ -1,23 +1,14 @@
 %% * --------------------------------------------------------
-%% * Sudoku Solver
+%% * Sudoku Solver (sudoku_features.pl)
 %% *
 %% * Description : Prolog program for solving a Sudoku grid using Constraint Logic Programming over Finite Domains (CLPFD) 
 %% * Author: Thomas Chimbault
 %% * February ~ March 2024  
 %% * --------------------------------------------------------
 
+:- module(features, [extract_data/2, write_sequence_in_grid/2, sudoku/2]). 
 :- use_module(library(pio)).
 :- use_module(library(clpfd)).
-
-%% * --------------------------------------------------------
-%% * Main predicate to solve the Sudoku
-%% * --------------------------------------------------------
-
-solver(InputFile, OutputFile) :-
-	extract_data(Entry, InputFile), !,	
-	length(Entry, PuzzleSize),
-	sudoku(Entry, Solution),
-	write_sequence_in_grid(OutputFile, Solution).
 
 
 %% * --------------------------------------------------------
@@ -32,7 +23,6 @@ sudoku_input([_|Entry]) --> whitespace, "X", whitespace, sudoku_input(Entry).
 sudoku_input([N|Entry]) --> whitespace, nat(N), whitespace, sudoku_input(Entry).
 sudoku_input(Entry) --> whitespace, "|", whitespace, sudoku_input(Entry).
 sudoku_input(Entry) --> whitespace, "-", whitespace, sudoku_input(Entry).
-% sudoku_input(Entry) --> whitespace, "+", whitespace, sudoku_input(Entry).
 sudoku_input(Entry) --> whitespace, "\n", whitespace, sudoku_input(Entry).
 
 % whitespace 
